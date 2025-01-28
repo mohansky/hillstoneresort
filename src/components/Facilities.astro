@@ -1,0 +1,53 @@
+---
+import { Car } from "lucide-react";
+import Container from "./styled/container";
+import { Heading } from "./styled/heading";
+import { Icon } from "astro-icon/components";
+import { Card, CardContent } from "./ui/card";
+
+const facilities = [
+  {
+    icon: "mdi:restaurant",
+    title: "Restaurant",
+    description: "Multiple dining options with diverse cuisines",
+  },
+  {
+    icon: "mdi:pool",
+    title: "Swimming Pool",
+    description: "Outdoor and indoor pool facilities",
+  },
+  {
+    icon: "mdi:wifi",
+    title: "WiFi",
+    description: "High-speed internet throughout the resort",
+  },
+  {
+    icon: "mdi:parking",
+    title: "Parking",
+    description: "Secure and complimentary parking",
+  },
+];
+---
+
+<Container id="facilities" width="marginxy" client:visible>
+  <Heading
+    className="text-4xl font-bold text-center mb-10"
+    size="xl"
+    client:visible
+  >
+    Facilities
+  </Heading>
+  <div class="flex flex-col md:flex-row items-center justify-center gap-4">
+    {
+      facilities.map((facility) => (
+        <Card className="border-none shadow-none">
+          <CardContent>
+            <Icon name={facility.icon} class="w-20 h-20 mx-auto" />
+            <p class="text-center text-2xl font-bold">{facility.title}</p>
+            <p class="text-center text-sm">{facility.description}</p>
+          </CardContent>
+        </Card>
+      ))
+    }
+  </div>
+</Container>
