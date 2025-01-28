@@ -32,7 +32,7 @@ export default function Footer({
 }) {
   return (
     <footer className="bg-muted border-t border-secondary p-8">
-      <div className="flex gap-4 justify-between py-20 max-w-4xl mx-auto">
+      <div className="flex flex-col lg:flex-row gap-4 justify-between py-20 max-w-4xl mx-auto">
         <div className="max-w-56">
           <img
             src="./images/hsr-logo.png"
@@ -102,7 +102,7 @@ export default function Footer({
           </span>
         </div>
 
-        <div>
+        <div className="hidden lg:block">
           <Heading size="md">The Hill Stone Resort</Heading>
         </div>
 
