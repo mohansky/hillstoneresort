@@ -37,13 +37,15 @@ const facilities = [
   >
     Facilities
   </Heading>
-  <div class="flex flex-col md:flex-row items-center justify-center gap-4">
+  <!-- <div class="flex flex-col md:flex-row items-center justify-center gap-4"> -->
+    <div class="grid grid-cols-2 lg:grid-cols-4 gap-4">
     {
       facilities.map((facility) => (
         <Card className="border-none shadow-none">
           <CardContent>
-            <Icon name={facility.icon} class="w-20 h-20 mx-auto" />
-            <p class="text-center text-2xl font-bold">{facility.title}</p>
+            <Icon name={facility.icon} class="w-12 h-12 md:w-20 md:h-20 mx-auto" />
+            {/* <p class="text-center text-2xl font-bold">{facility.title}</p> */}
+            <Heading className="text-center" size="md" client:visible>{facility.title}</Heading>
             <p class="text-center text-sm">{facility.description}</p>
           </CardContent>
         </Card>

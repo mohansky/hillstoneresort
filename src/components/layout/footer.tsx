@@ -1,4 +1,3 @@
-import type { OptionsCollection, OptionsSchema } from "@/content.config";
 import { Heading } from "../styled/heading";
 import { Button } from "../ui/button";
 import {
@@ -10,16 +9,7 @@ import {
   Phone,
   Youtube,
 } from "lucide-react";
-import type { MenuLink } from "@/types";
 import { links } from "@/content/data/menu";
-
-// const links: MenuLink[] = [
-//   { text: "About", link: "/#about" },
-//   { text: "Rooms", link: "/#rooms" },
-//   { text: "Facilities", link: "/#facilities" },
-//   { text: "Directions", link: "/#directions" },
-//   { text: "Contact", link: "/#contact" },
-// ];
 
 export default function Footer({
   author,
@@ -32,17 +22,16 @@ export default function Footer({
 }) {
   return (
     <footer className="bg-muted border-t border-secondary p-8">
-      <div className="flex flex-col lg:flex-row gap-4 justify-between py-20 max-w-4xl mx-auto">
-        <div className="max-w-56">
+      <div className="grid lg:grid-cols-3 gap-4 justify-between py-20 mx-auto">
+        <div className="text-center mx-auto mb-10">
           <img
             src="./images/hsr-logo.png"
             alt="hillstone-logo"
-            className="mx-auto"
-          />
-          {/* <Heading size="sm">Hill Stone Resort</Heading> */}
+            className="mx-auto w-56 text-center"
+          /> 
         </div>
 
-        <div className="space-y-3">
+        <div className="space-y-3 mb-10">
           <Heading size="sm">Contact </Heading>
           <span className="flex items-center">
             <a
@@ -73,9 +62,9 @@ export default function Footer({
             </a>
           </span>
         </div>
-        <div>
-          <Heading size="sm">Links</Heading>
 
+        <div className="mb-5">
+          <Heading size="sm">Links</Heading>
           <ul className="my-3 ml-1 list-none [&>li]:mt-1">
             {links.map((link) => (
               <li key={link.text}>
