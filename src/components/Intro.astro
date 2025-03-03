@@ -1,0 +1,25 @@
+---
+import Container from "./Container.astro";
+import HillStoneIcon from "./HillStoneIcon.astro";
+import HillStoneLogo from "./HillStoneLogo.astro";
+import Paragraph from "./Paragraph.astro";
+
+interface Props {
+  intro: string[];
+}
+
+const { intro } = Astro.props;
+---
+
+<section id="intro">
+  <Container width="marginxy">
+    <div class="flex gap-8">
+      <div class="w-full lg:w-4/6">
+        {intro.map((item) => <Paragraph class="indent-8">{item}</Paragraph>)}
+      </div>
+      <div class="hidden lg:block">
+        <HillStoneIcon/>
+      </div>
+    </div>
+  </Container>
+</section>

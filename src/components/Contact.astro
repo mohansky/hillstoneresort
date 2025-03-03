@@ -1,0 +1,44 @@
+---
+import Container from "./Container.astro";
+import Heading from "./Heading.astro";
+import { getCollection } from "astro:content";
+import ButtonIcon from "./ButtonIcon.astro";
+
+const siteData = await getCollection("siteCollection");
+const siteInfo = siteData[0].data;
+const site = siteInfo;
+
+interface ContactInfo {
+  icon: string;
+  link: string;
+  text: string;
+}
+
+interface Props {
+  contactTitle: string;
+  contactSubtitle: string;
+  contactInfo: ContactInfo[];
+}
+
+const { contactTitle, contactSubtitle, contactInfo } = Astro.props;
+---
+
+<section id="contact">
+  <Container width="marginxy">
+    <Heading class="text-center mb-10" size="xxl"
+      >{contactTitle}</Heading
+    >
+    <div class="space-y-3">
+      <Heading size="md" fontweight="normal" class="text-center mb-10">
+        {contactSubtitle}
+      </Heading>
+      <div class="flex flex-col md:flex-row items-center justify-evenly">
+        {
+          contactInfo.map((item) => (
+            <ButtonIcon link={item.link} icon={item.icon} text={item.text} />
+          ))
+        }
+      </div>
+    </div>
+  </Container>
+</section>

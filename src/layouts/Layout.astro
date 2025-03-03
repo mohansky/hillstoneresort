@@ -1,0 +1,168 @@
+---
+import Navbar from "@/components/Navbar.astro";
+import "@/styles/global.css";
+
+import Footer from "@/components/Footer.astro";
+import { getCollection } from "astro:content";
+
+const siteData = await getCollection("siteCollection");
+const siteInfo = siteData[0].data;
+const site = siteInfo;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <script is:inline>
+      if (localStorage.getItem("theme") === null) {
+        document.documentElement.setAttribute("data-theme", "winter");
+      } else
+        document.documentElement.setAttribute(
+          "data-theme",
+          localStorage.getItem("theme")
+        );
+    </script>
+    <script>
+      import { themeChange } from "theme-change";
+      themeChange();
+    </script>
+
+    <script
+      is:inline
+      type="application/ld+json"
+      set:html={JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "Resort",
+        name: `${site.title}`,
+        description: `${site.description}`,
+        image: `${site.ogImageURL}`,
+        url: `${site.basepath}`,
+        address: {
+          "@type": "PostalAddress",
+          streetAddress: "Eze(Deopani) Bridge",
+          addressLocality: "Roing, Arunachal Pradesh ",
+          addressRegion: "AR",
+          postalCode: "792110",
+          addressCountry: "IN",
+        },
+        geo: {
+          "@type": "GeoCoordinates",
+          latitude: "28.1588813",
+          longitude: "95.8468901",
+        },
+        telephone: `${site.contactInfo[0].text}`,
+        email: `${site.email}`,
+        priceRange: "₹2500 - ₹5000",
+        checkinTime: "12:00 p.m.",
+        checkoutTime: "11:00 a.m.",
+        starRating: {
+          "@type": "Rating",
+          ratingValue: "5",
+        },
+        amenities: [
+          "Free Wi-Fi",
+          "Swimming Pool",
+          "Restaurant",
+          "Room Service",
+        ],
+        offers: {
+          "@type": "Offer",
+          price: "250",
+          priceCurrency: "INR",
+          availability: "https://schema.org/InStock",
+          validFrom: "2025-01-01",
+        },
+        review: {
+          "@type": "Review",
+          author: {
+            "@type": "Person",
+            name: "John Doe",
+          },
+          reviewRating: {
+            "@type": "Rating",
+            ratingValue: "4.8",
+            bestRating: "5",
+          },
+          reviewBody:
+            "Amazing experience! The resort was beautiful, and the staff was very friendly.",
+        },
+        sameAs: [
+          "https://www.facebook.com/hillstoneresort",
+          "https://www.instagram.com/hillstoneresort",
+          "https://www.tripadvisor.com/hillstoneresort",
+        ],
+      })}
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@5.0.0-beta.6/daisyui.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <!-- <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    /> -->
+
+    <!-- <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"
+    ></script> -->
+
+    <!-- Basic Meta Tags -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.png" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{site.title}</title>
+    <meta name="description" content={site.description} />
+
+    <!-- Open Graph Meta Tags (for social sharing) -->
+    <meta property="og:title" content={site.title} />
+    <meta property="og:description" content={site.description} />
+    <meta
+      property="og:image"
+      content={`${site.basepath}/images/open-graph-image.jpg`}
+    />
+    <meta property="og:url" content={`${site.basepath}/`} />
+    <meta property="og:type" content="website" />
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={site.title} />
+    <meta name="twitter:description" content={site.description} />
+    <meta
+      name="twitter:image"
+      content={`${site.basepath}/images/twitter-image.jpg"`}
+    />
+
+    <!-- Canonical URL (prevents duplicate content issues) -->
+    <link rel="canonical" href={site.basepath} />
+
+    <!-- Additional SEO Meta Tags -->
+    <meta name="robots" content="index, follow" />
+    <meta name="keywords" content={site.keywords.join(",")} />
+    <!-- Less important now but still used -->
+    <meta name="author" content={site.author.name} />
+  </head>
+  <body>
+    <Navbar links={site.links} />
+    <slot />
+    <Footer
+      author={site.author}
+      footnote={site.footnote}
+      copyright={site.copyright}
+      links={site.links}
+      footerContact={site.footerContact}
+      footerSocials={site.footerSocials}
+    />
+  </body>
+</html>
+
+<style>
+  html,
+  body {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+  }
+</style>

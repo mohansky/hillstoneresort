@@ -1,0 +1,55 @@
+---
+import { Icon } from "astro-icon/components";
+import Container from "./Container.astro";
+import Heading from "./Heading.astro";
+import Paragraph from "./Paragraph.astro";
+
+interface Transportation {
+  icon: string;
+  text: string;
+}
+
+interface Directions {
+  title: string;
+  description: string;
+  map: string;
+  transportation: Transportation[];
+}
+
+interface Props {
+  directions: Directions;
+}
+
+const { directions } = Astro.props;
+---
+
+<section id="directions" class="bg-base-200">
+  <Container width="marginxy">
+    <Heading class="text-center mb-10" size="xxl">
+      {directions.title}
+    </Heading>
+    <div class="grid lg:grid-cols-2 place-content-center gap-8">
+      <div class="space-y-5">
+        <Paragraph class="indent-8">
+          {directions.description}
+        </Paragraph>
+
+        {
+          directions.transportation.map((transportation) => (
+            <span class="group flex gap-4">
+              <Icon name={transportation.icon} class="h-6 w-6 group-hover:scale-125 transition delay-150 duration-300 ease-in-out" />
+              <p>{transportation.text}</p>
+            </span>
+          ))
+        }
+      </div>
+      <iframe
+        src={directions.map}
+        class="border-0 w-full h-full min-h-96"
+        allowfullscreen=""
+        loading="lazy"
+        title="Directions to the Hill Stone Resort"
+        referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+  </Container>
+</section>

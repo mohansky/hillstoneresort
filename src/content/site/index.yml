@@ -1,0 +1,96 @@
+site:  
+  name: Hill Stone Resort
+  title: Hill Stone Resort | ‘the camping village’. Near Roing, Arunachal Pradesh.
+  description: Hillstone Resort ‘the camping village’ offers you unlimited fun and adventure with friends and families. It is located just 2 kilometres away from the main Roing township of Lower Dibang Valley district, Arunachal Pradesh.
+  basepath: https://www.hillstoneresort.com
+  ogImageURL: ./images/hsr-video-bg.jpg
+  keywords:
+    - Wev Design
+ 
+  author:
+    name: Mohan Kumar
+    email: mohansky@gmail.com
+    url: https://www.mohankumar.dev
+  footnote1: Developed with ♥ and ♫ in Bangalore
+  footnote: Built with Nextjs
+  copyright: Hill Stone Resort
+  email: mohansky@gmail.com
+  hero:
+    - bgImage: ./images/hsr-video-bg.jpg
+      bgVideo: ./images/hillstone-bg.mp4
+      title: The Hill Stone Resort 
+      subtitle: Immerse yourself in nature
+      btnLink: /#contact
+      btnText: Book your stay 
+  links:
+    - text: About
+      link: /#intro
+    - text: Rooms
+      link: /#rooms
+    - text: Facilities
+      link: /#facilities
+    - text: Directions
+      link: /#directions
+    - text: Contact
+      link: /#contact
+
+  intro:
+    - Escape to Hillstone Resort, where adventure meets luxury in a pristine natural setting. Nestled among majestic mountains, this unique camping village offers permanent tents with private bathrooms and mobile camping options for those seeking a true outdoor experience. The pristine river nearby provides perfect spots for swimming, angling, and picnicking, while our modern swimming pool offers additional refreshment after a day of mountain trekking.
+    - From authentic local delicacies to international cuisine, our restaurant caters to every taste, ensuring your culinary experience matches the splendor of your surroundings. Whether you're an adventure enthusiast or seeking a peaceful family retreat, Hillstone Resort combines the thrill of outdoor living with comfortable amenities for an unforgettable stay.   
+
+  facilitiesTitle: Facilities
+  facilities:
+    - icon: mdi:restaurant
+      title: Restaurant
+      description: Multiple dining options with diverse cuisines
+    - icon: mdi:pool
+      title: Swimming Pool
+      description: Outdoor pool facilities
+    - icon: mdi:wifi
+      title: WiFi
+      description: WiFi internet throughout the resort
+    - icon: mdi:parking
+      title: Parking
+      description: Secure and complimentary parking
+
+  directions:
+    title: Directions
+    description: The Hill Stone resort is located just 2 kilometres away from the main Roing township of Lower Dibang Valley district, Arunachal Pradesh. One can easily reach Roing within two hours via Tinsukia and Dibrugarh town of Assam through National Highway no 115 either by car or bus. The Resort is placed exactly on banks of confluence between Eze River and Eme River which joins and becomes the mighty Eze River(Deopani).
+    transportation:
+     - icon: mdi:bus
+       text: There are daily buses from Guwahati, Nagaon and Tezpur.
+     - icon: mdi:train
+       text: Closest Railway Station is Tinsukia Junction Railway Station (108 km).
+     - icon: mdi:plane
+       text: Closest Airport is Dibrugarh Airport (149 km).
+    map: https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d38660.91611824208!2d95.8357820936922!3d28.16762843589249!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x373e49c5ab614a43%3A0x77d0e3b48fb46cfe!2sEze(Deopani)%20Bridge!5e0!3m2!1sen!2sin!4v1738084317775!5m2!1sen!2sin
+      
+  contactTitle: Contact
+  contactSubtitle: We look forward to hearing from you. Get in touch with us to book your stay.
+  contactInfo:
+  - link: tel:+919845632121
+    icon: mdi:phone
+    text: +91 984 563 2121
+  - link: mailto:booking@hillstoneresort.com
+    icon: mdi:email-outline
+    text: booking@hillstoneresort.com 
+  footerContact:
+  - link: https://www.google.com/maps/place/Hill+Stone+Resort/@28.1586164,91.8464716,17z/data=!3m1!4b1!4m5!3m4!1s0x373e49c5ab614a43:0x77d0e3b48fb46cfe!8m2!3d28.1586164!4d91.8464716
+    icon: mdi:map-marker
+    text: Roing, Arunachal Pradesh 
+  - link: tel:+919845632121
+    icon: mdi:phone
+    text: +91 984 563 2121
+  - link: mailto:booking@hillstoneresort.com
+    icon: mdi:email-outline
+    text: booking@hillstoneresort.com
+  footerSocials:
+  - link: https://www.facebook.com/hillstoneresort/
+    icon: mdi:facebook
+    text: Facebook
+  - link: https://www.instagram.com/hillstoneresort/
+    icon: mdi:instagram
+    text: Instagram
+  - link: https://www.youtube.com/channel/UC3-9-5-2-0-4-6-8-9"
+    icon: mdi:youtube
+    text: Youtube  
