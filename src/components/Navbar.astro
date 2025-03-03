@@ -36,11 +36,11 @@ const { links } = Astro.props;
     if (scrollTop > heroSectionHeight) {
       navbar?.classList.add("bg-base-200");
       navbar?.classList.add("shadow-md");
-      navbar?.classList.remove("bg-transparent blur-lg");
+      navbar?.classList.remove("bg-transparent");
     } else {
       navbar?.classList.remove("bg-base-200");
       navbar?.classList.remove("shadow-md");
-      navbar?.classList.add("bg-transparent blur-lg");
+      navbar?.classList.add("bg-transparent");
     }
   });
 </script>
@@ -50,7 +50,7 @@ const { links } = Astro.props;
   <div class="drawer-content flex flex-col">
     <div
       id="navbar"
-      class="z-10 navbar bg-transparent w-full fixed top-0 shadow-none px-2 md:px-5 lg:px-10 transition-transform"
+      class="z-10 navbar backdrop-blur-xs w-full fixed top-0 shadow-none px-2 md:px-5 lg:px-10 transition-transform"
     >
       <div class="mx-2 flex-1 px-2">
         <a href="/" class="text-xl">
