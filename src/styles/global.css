@@ -83,7 +83,7 @@
     font-family: "Jost";
     font-style: normal;
     font-weight: 400;
-    src: url("../fonts/jost-v18-latin-regular.woff2") format("woff2");
+    src: url("../../public/fonts/jost-v18-latin-regular.woff2") format("woff2");
   }
 
   /* cormorant-garamond-regular - latin */
@@ -92,7 +92,7 @@
     font-family: "Cormorant Garamond";
     font-style: normal;
     font-weight: 400;
-    src: url("../fonts/cormorant-garamond-v16-latin-regular.woff2")
+    src: url("../../public/fonts/cormorant-garamond-v16-latin-regular.woff2")
       format("woff2");
   }
 
